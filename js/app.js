@@ -1,3 +1,4 @@
+let grille = document.querySelector('#grille');
 let result = [];
 
 function nbAleatoire(){
@@ -9,4 +10,17 @@ function nbAleatoire(){
     }
     console.log(result);
 }
+function créerCases(){
+    for(let i = 0; i < result.length; i++){
+        let el = document.createElement('li');
+        el.textContent = result[i];
+        grille.appendChild(el);    
+    }
+    grille.appendChild(document.createElement('li'))
+}
+
+
+
+
 nbAleatoire();
+créerCases();

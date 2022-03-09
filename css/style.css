@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+}
+#grille{
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+li{
+    list-style: none;
+    font-size: 5em;
+    width: 1.5em;
+    height: 1.5em;
+    border: solid 2px black;
+    cursor: pointer;
+}
