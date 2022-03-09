@@ -8,9 +8,8 @@ function nbAleatoire(){
             result.push(nb);
         }
     }
-    console.log(result);
 }
-function créerCases(){
+function créerGrille(){
     for(let i = 0; i < result.length; i++){
         let el = document.createElement('li');
         el.textContent = result[i];
@@ -20,7 +19,32 @@ function créerCases(){
 }
 
 
+let cases = document.getElementsByTagName('li');
+let caseVide = 15;
 
+function GlisserDeposer(){
+    console.log(caseVide)
+    for(let i = 0; i < cases.length; i++){
+        cases[i].addEventListener('click', function listen(){
+            if(i == caseVide - 1 || i == caseVide - 4 || i == caseVide + 1 || i == caseVide + 4){
+                let text = cases[i].textContent;
+                console.log(text)
+                cases[i].textContent = '';
+                cases[caseVide].textContent = text;
+                caseVide = i;
+                GlisserDeposer();
+            }
+            
+        })
+        
+    }
+}
+
+
+
+console.log(cases)
 
 nbAleatoire();
-créerCases();
+créerGrille();
+GlisserDeposer();
+
